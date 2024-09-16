@@ -28,6 +28,7 @@ class Application {
 
   private loadConfig(): void {
     config.validateConfig();
+    config.cloudinaryConfig();
   }
 
   private securityMiddleware(app: Express): void {
