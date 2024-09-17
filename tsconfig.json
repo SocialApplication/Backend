@@ -25,7 +25,8 @@
     ],
     "paths": {
       "@global/*": ["src/shared/globals/*"],
-      "@root/*": ["src/*"]
+      "@root/*": ["src/*"],
+      "@auth/*": ["src/features/auth/*"]
     }
   }
 }
