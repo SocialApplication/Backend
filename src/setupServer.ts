@@ -2,10 +2,11 @@ import { Application } from 'express';
 import http from 'http';
 import 'express-async-errors';
 import { config } from '@root/config';
-import { Logger } from 'winston';
+import Logger from 'bunyan';
+
 
 const SERVER_PORT = 5000;
-const log: Logger = config.createLogger();
+const log: Logger = config.createLogger('server');
 
 export class ChattyServerTwo {
   private app: Application;

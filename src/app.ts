@@ -2,7 +2,6 @@ import express, {Express, json, urlencoded, Response, Request, NextFunction } fr
 import { ChattyServerTwo } from '@root/setupServer';
 import databaseConnection from '@root/setupDatabase';
 import { config } from '@root/config';
-import {Logger} from 'winston';
 import applicationRoutes from '@root/routes';
 import { CustomError, IErrorResponse } from '@global/helpers/error-handler';
 import cors from 'cors';
@@ -10,7 +9,8 @@ import hpp from 'hpp';
 import compression from 'compression';
 import HTTP_STATUS from 'http-status-codes';
 import apiStats from 'swagger-stats';
-const log: Logger = config.createLogger();
+import Logger from 'bunyan';
+const log: Logger = config.createLogger('app');
 
 class Application {
   public initialize(): void {

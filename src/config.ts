@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import winston from 'winston';
+import bunyan from 'bunyan';
 import cloudinary from 'cloudinary';
 dotenv.config({});
 
@@ -28,12 +28,8 @@ class Config {
 
   }
 
-  public createLogger(): any {
-    return winston.createLogger({
-        level: 'info',
-        format: winston.format.json(),
-        transports: [new winston.transports.Console()],
-      });
+  public createLogger(name: string): bunyan {
+    return bunyan.createLogger({ name, level: 'debug' });
   }
 
   public validateConfig(): void {
