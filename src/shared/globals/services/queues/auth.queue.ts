@@ -1,9 +1,11 @@
 import { IAuthJob } from '@root/features/auth/interfaces/auth.interface';
 import { BaseQueue } from './base.queue';
+import { authWorker } from '@global/workers/auth.worker';
 
 class AuthQueue extends BaseQueue{
   constructor(){
     super('auth');
+    this.processJob('addAuthUserJob', 5, authWorker.addAuthUserToDB);
   }
 
   public addAuthUserJob(name: string, data: IAuthJob): void{

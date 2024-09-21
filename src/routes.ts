@@ -8,7 +8,7 @@ const BASE_PATH = '/api/v1';
 export default (app: Express) => {
   const routes = () => {
     app.use('', healthRoutes.health());
-    app.use('/queues', serverAdapter.getRouter());
+    app.use('/queues ', serverAdapter.getRouter());
     app.use(BASE_PATH, authRoutes.routes());
   };
   routes();

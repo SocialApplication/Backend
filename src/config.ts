@@ -7,6 +7,7 @@ class Config {
   public DATABASE_URL: string | undefined;
   public CLIENT_URL: string | undefined;
   public NODE_ENV: string | undefined;
+  public JWT_TOKEN: string | undefined;
   public SECRET_KEY_ONE: string | undefined;
   public SECRET_KEY_TWO: string | undefined;
   public REDIS_HOST: string | undefined;
@@ -25,6 +26,7 @@ class Config {
     this.CLOUD_NAME = process.env.CLOUD_NAME || '';
     this.CLOUD_API_KEY = process.env.CLOUD_API_KEY || '';
     this.CLOUD_API_SECRET = process.env.CLOUD_API_SECRET || '';
+    this.JWT_TOKEN = process.env.JWT_TOKEN || '';
 
   }
 
