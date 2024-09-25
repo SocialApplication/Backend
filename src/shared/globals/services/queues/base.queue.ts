@@ -20,7 +20,7 @@ export abstract class BaseQueue {
     bullAdapters.push(new BullAdapter(this.queue));
     bullAdapters = [...new Set(bullAdapters)];
     serverAdapter = new ExpressAdapter();
-    serverAdapter.setBasePath('/queues');
+    serverAdapter.setBasePath('/queue');
 
     createBullBoard({
       queues: bullAdapters,

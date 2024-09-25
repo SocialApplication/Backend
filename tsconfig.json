@@ -27,7 +27,8 @@
       "@global/*": ["src/shared/globals/*"],
       "@root/*": ["src/*"],
       "@auth/*": ["src/features/auth/*"],
-      "@user/*": ["src/features/user/*"]
+      "@user/*": ["src/features/user/*"],
+      "@service/*": ["src/shared/globals/services/*"]
     }
   }
 }
